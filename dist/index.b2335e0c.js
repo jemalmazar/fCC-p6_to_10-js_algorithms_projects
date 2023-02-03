@@ -526,6 +526,7 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"f47v6":[function(require,module,exports) {
+console.log('hello world');
 
 },{}]},["3AOa5","f47v6"], "f47v6", "parcelRequire5647")
 

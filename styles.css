@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
-# Global Styles & CSS Variables
+# Imports, Global Styles, & CSS Variables
 --------------------------------------------------------------*/
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css");
 
 html {
     box-sizing: border-box;
@@ -18,6 +19,7 @@ html {
     --tabcordion_bg_colour: #FFF7D7;
     --submit_btn_bg: #FDE05D;
 }
+
 
 /*--------------------------------------------------------------
 # Eric Meyer CSS Reset
@@ -167,11 +169,66 @@ table {
 /* Main */
 
 body {
-    background: url(./images/layered-waves-mobile.svg) no-repeat center center fixed;
+    background: url(./images/layered-waves-mobile.svg) repeat center center fixed;
+    display: grid;
+    place-content: center;
+    height: 100vh;
 }
 
 
+/*  Tabcordion */
 
+.tabcordion {
+    background-color: var(--tabcordion_bg_colour);
+    width: 19rem;
+    border-top: solid 5px black;
+}
+
+.tabcordion h1 {
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.25em;
+    font-weight: bold;
+    text-align: center;
+    width: 12.25em;
+    padding: 1.5em 0;
+    margin: 0 auto;
+}
+
+[role='tablist'] button {
+    display: grid;
+    grid-template-columns: 90% 1fr;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8em;
+    font-weight: bold;
+    background-color: transparent;
+    text-align: left;
+    border: none;
+    border-top: solid 1px #C9C9C9;
+    padding: 0.5em;
+    width: 100%;
+}
+
+[role='tab'] span {
+    height: 24px;
+    width: 24px;
+    transition: transform 0.3s linear;
+}
+
+[role='tabpanel'] {
+    /* tabpanel CSS code from: https://dev.to/lizlaffitte/creating-an-accordion-with-html-css-javascript-3gmn */
+    padding: 0px 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+[role='tabpanel'] p {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.75rem;
+    color: var(--secondary_brand_colour);
+    padding-top: 1rem;
+}
 
 /*--------------------------------------------------------------
 # Media Breakpoints
@@ -183,4 +240,15 @@ body {
         background: url(./images/layered-waves-desktop.svg) no-repeat center center fixed;
         background-size: cover;
     }
+
+    [role='tablist'] {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+
+    [role='tabpanel'] {
+        /* changing grid/flex item order code from: https://codepen.io/indri/pen/eEyGWE */
+        order: 2;
+    }
+
 }

@@ -43,5 +43,8 @@
   },
   "browserslist": [
     "last 1 chrome versions"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap-icons": "^1.8.2"
+  }
 }
