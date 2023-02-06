@@ -227,11 +227,41 @@ body {
     order: 2;
 }
 
-[role='tabpanel'] p {
+.instructions {
     font-family: 'Noto Sans', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--secondary_brand_colour);
-    padding-top: 1rem;
+    padding: 1rem 0 0.5rem;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    padding: 1rem;
+}
+
+input[type='text'] {
+    grid-area: 1 / 1 / 2 / 4;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.9rem;
+    height: 2rem;
+    padding: 1rem 5.75rem 1rem 0.5rem;
+    border-radius: 5px;
+    border: solid 2px var(--main_brand_colour);
+}
+
+input[type='submit'] {
+    grid-area: 1 / 3 / 2 / 4;
+    place-self: center;
+    background-color: var(--submit_btn_bg);
+    font-family: 'Noto Sans', Sans-Serif;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    width: 90%;
+    padding: 0.25rem;
+    cursor: pointer;
 }
 
 /*--------------------------------------------------------------
@@ -277,7 +307,26 @@ body {
         /* changing grid/flex item order code from: https://codepen.io/indri/pen/eEyGWE */
         order: 2;
         text-align: center;
+    }
 
+    .instructions {
+        font-size: 1rem;
+        padding: 3rem 0;
+        height: 6rem;
+    }
+
+    form {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    input[type='text'] {
+        padding-right: 8rem;
+    }
+
+    input[type='submit'] {
+        width: 75%;
+        margin-left: 2rem;
     }
 
 }
