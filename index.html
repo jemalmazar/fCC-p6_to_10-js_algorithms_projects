@@ -55,8 +55,15 @@
             </button>
             <div id="roman-panel" role="tabpanel" aria-labelledby="roman" aria-hidden="true">
                 <p class="instructions">
-                    Roman Numeral Converter
+                    Enter a positive integer to convert to a Roman Numeral.
                 </p>
+                <form name="roman">
+                    <input type="number" name="roman" placeholder="Enter a number">
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="result" aria-labelledby="roman">
+                    <p>⬆</p>
+                </div>
             </div>
 
             <button id="caesar" role="tab" aria-expanded="false" aria-controls="caesar-panel">

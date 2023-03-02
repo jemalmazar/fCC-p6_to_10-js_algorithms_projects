@@ -230,7 +230,7 @@ body {
 
 .instructions {
     font-family: 'Noto Sans', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--secondary_brand_colour);
     padding: 1rem 0 0.5rem;
 }
@@ -242,7 +242,8 @@ form {
     padding: 1rem;
 }
 
-input[type='text'] {
+input[type='text'],
+input[type='number'] {
     grid-area: 1 / 1 / 2 / 4;
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.9rem;
