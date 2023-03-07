@@ -41,6 +41,11 @@ function convertToRoman(num) {
     return convertedNum;
 }
 
+function rot13(str) {
+    // modulo use taken from https://forum.freecodecamp.org/t/caesars-cipher-other-approaches/82127/25
+    return str.toUpperCase().replace(/[A-Z]/g, (letter) => String.fromCharCode((letter.charCodeAt(0) % 26) + 65));
+}
+
 function handleClick(e) {
     // grab button panel's open or closed status
     const isTabOpen = e.currentTarget.getAttribute('aria-expanded');
@@ -103,6 +108,12 @@ function handleSubmit(e) {
             <p>
                 ${convertToRoman(e.currentTarget.roman.value)}
             </p>
+        `;
+    }
+
+    if (name === 'caesar') {
+        targetDiv.innerHTML = `
+            <p>${rot13(e.currentTarget.caesar.value)}</p>
         `;
     }
 }
