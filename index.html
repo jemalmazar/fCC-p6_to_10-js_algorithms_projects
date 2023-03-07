@@ -72,8 +72,15 @@
             </button>
             <div id="caesar-panel" role="tabpanel" aria-labelledby="caesar" aria-hidden="true">
                 <p class="instructions">
-                    Caesar's Cipher
+                    Enter a short phrase to encode using a ROT13 cipher.
                 </p>
+                <form name="caesar">
+                    <input type="text" name="caesar" placeholder="Enter some text">
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="result" aria-labelledby="caesar">
+                    <p>⬆</p>
+                </div>
             </div>
 
             <button id="telephone" role="tab" aria-expanded="false" aria-controls="telephone-panel">
