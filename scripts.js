@@ -46,6 +46,16 @@ function rot13(str) {
     return str.toUpperCase().replace(/[A-Z]/g, (letter) => String.fromCharCode((letter.charCodeAt(0) % 26) + 65));
 }
 
+function telephoneCheck(str) {
+    const regex1 = /^(1\s?)?\d{3}([-\s]?)\d{3}\2\d{4}$/;
+    const regex2 = /^(1\s?)?\(\d{3}\)\s?\d{3}[-\s]?\d{4}$/;
+
+    if (regex1.test(str)) {
+        return true;
+    }
+    return !!regex2.test(str);
+}
+
 function handleClick(e) {
     // grab button panel's open or closed status
     const isTabOpen = e.currentTarget.getAttribute('aria-expanded');
@@ -115,6 +125,24 @@ function handleSubmit(e) {
         targetDiv.innerHTML = `
             <p>${rot13(e.currentTarget.caesar.value)}</p>
         `;
+    }
+
+    if (name === 'telephone') {
+        if (telephoneCheck(e.currentTarget.telephone.value)) {
+            targetDiv.innerHTML = `
+                <p>
+                    <span class="material-symbols-outlined">check_circle</span>
+                    Vaild Format
+                </p> 
+            `;
+        } else {
+            targetDiv.innerHTML = `
+                <p>
+                    <span class="material-symbols-outlined">cancel</span>
+                    Invalid Format
+                </p>
+            `;
+        }
     }
 }
 
