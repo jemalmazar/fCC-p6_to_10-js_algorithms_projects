@@ -89,8 +89,15 @@
             </button>
             <div id="telephone-panel" role="tabpanel" aria-labelledby="telephone" aria-hidden="true">
                 <p class="instructions">
-                    Telephone Number Validator
+                    Enter a telephone number to validate whether is looks like a valid US-based phone number.
                 </p>
+                <form name="telephone">
+                    <input type="text" name="telephone" placeholder="Enter a phone number">
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="result" aria-labelledby="telephone">
+                    <p>⬆</p>
+                </div>
             </div>
 
             <button id="cash" role="tab" aria-expanded="false" aria-controls="cash-panel">
