@@ -235,6 +235,16 @@ body {
     padding: 1rem 0 0.5rem;
 }
 
+.instructions a {
+    color: var(--main_brand_colour);
+    text-decoration: none;
+}
+
+.instructions a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
+}
+
 form {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -279,6 +289,29 @@ input[type='submit'] {
     justify-content: center;
     align-items: center;
     gap: 0.25em;
+}
+
+hr {
+    width: 66%;
+}
+
+.signature {
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.75em;
+    text-align: center;
+    padding: 0.5em 0 1em;
+}
+
+.signature a {
+    font-family: 'Roboto Slab', serif;
+    font-weight: bold;
+    color: var(--main_brand_colour);
+    text-decoration: none;
+}
+
+.signature a:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25em;
 }
 
 /*--------------------------------------------------------------
@@ -346,4 +379,7 @@ input[type='submit'] {
         margin-left: 2rem;
     }
 
+    hr {
+        width: 50%;
+    }
 }
