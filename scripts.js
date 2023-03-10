@@ -95,7 +95,7 @@ function handleSubmit(e) {
     const { name } = e.currentTarget;
     const targetDiv = resultDivs.find((panel) => panel.getAttribute('aria-labelledby') === name);
 
-    if (name === 'palindrome') {
+    if (name === 'palindrome' && e.currentTarget.palindrome.value !== '') {
         if (palindrome(e.currentTarget.palindrome.value)) {
             targetDiv.innerHTML = `
                 <p>
@@ -111,23 +111,15 @@ function handleSubmit(e) {
                 </p>
             `;
         }
-    }
-
-    if (name === 'roman') {
+    } else if (name === 'roman' && e.currentTarget.roman.value !== '') {
         targetDiv.innerHTML = `
-            <p>
-                ${convertToRoman(e.currentTarget.roman.value)}
-            </p>
+            <p>${convertToRoman(e.currentTarget.roman.value)}</p>
         `;
-    }
-
-    if (name === 'caesar') {
+    } else if (name === 'caesar' && e.currentTarget.caesar.value !== '') {
         targetDiv.innerHTML = `
             <p>${rot13(e.currentTarget.caesar.value)}</p>
         `;
-    }
-
-    if (name === 'telephone') {
+    } else if (name === 'telephone' && e.currentTarget.telephone.value !== '') {
         if (telephoneCheck(e.currentTarget.telephone.value)) {
             targetDiv.innerHTML = `
                 <p>
@@ -143,6 +135,8 @@ function handleSubmit(e) {
                 </p>
             `;
         }
+    } else {
+        targetDiv.innerHTML = `<p>Nothing Entered</p>`;
     }
 }
 
