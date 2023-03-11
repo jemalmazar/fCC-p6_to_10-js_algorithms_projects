@@ -16,66 +16,105 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Noto+Sans&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,0">
     <!-- JavaScript Module -->
-
+    <script src="/index.b2335e0c.js" defer=""></script>
 </head>
 
 <body>
 
-    <div class="tabcordion-container">
+    <div class="tabcordion">
 
-        <h1 class="tabcordion-header">freeCodeCamp JavaScript Algorithms and Data Structures Projects</h1>
+        <h1>freeCodeCamp <br>JavaScript Algorithms and Data Structures Projects</h1>
 
-        <div class="tabcordion-list">
-            <button>
+        <div role="tablist" aria-label="JavaScript Algorithms">
+
+            <button id="palindrome" role="tab" aria-expanded="false" aria-controls="palindrome-panel">
                 Palindrome Checker
-                <i class="bi bi-chevron-down"></i>
+                <span class="material-symbols-outlined">expand_more</span>
             </button>
-            <button>
-                Roman Numeral Converter
-                <i class="bi bi-chevron-down"></i>
-            </button>
-            <button>
-                Caesar's Cipher
-                <i class="bi bi-chevron-down"></i>
-            </button>
-            <button>
-                Telephone Number Validator
-                <i class="bi bi-chevron-down"></i>
-            </button>
-            <button>
-                Cash Register
-                <i class="bi bi-chevron-down"></i>
-            </button>
-        </div> <!--- .tabcordion-list -->
-        <div class="tabcordion-panel">
-            <p class="instructions">
-                Enter a string to check if it's spelled the same way forwards and backwards — a palindrome.
-            </p>
-        </div> <!-- .tabcordion-panel -->
-        <div class="tabcordion-panel">
-            <p class="instructions">
-                Roman Numeral Converter
-            </p>
-        </div> <!-- .tabcordion-panel -->
-        <div class="tabcordion-panel">
-            <p class="instructions">
-                Caesar's Cipher
-            </p>
-        </div> <!-- .tabcordion-panel -->
-        <div class="tabcordion-panel">
-            <p class="instructions">
-                Telephone Number Validator
-            </p>
-        </div> <!-- .tabcordion-panel -->
-        <div class="tabcordion-panel">
-            <p class="instructions">
-                Cash Register
-            </p>
-        </div> <!-- .tabcordion-panel -->
+            <div id="palindrome-panel" role="tabpanel" aria-labelledby="palindrome" aria-hidden="true">
+                <p class="instructions">
+                    Enter a string to check if it's spelled the same way forwards and backwards — a palindrome.
+                </p>
+                <form name="palindrome">
+                    <input type="text" name="palindrome" minlength="3" maxlength="25" placeholder="Enter some text">
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="result" aria-labelledby="palindrome">
+                    <p></p>
+                </div>
+            </div>
 
-    </div> <!-- .tabcordion-container -->
-    <script src="/index.5e469f4a.js"></script>
-<script src="/fCC-p6_to_10-js_algorithms_projects.3464ddca.js"></script></body>
+            <button id="roman" role="tab" aria-expanded="false" aria-controls="roman-panel">
+                Roman Numeral Converter
+                <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div id="roman-panel" role="tabpanel" aria-labelledby="roman" aria-hidden="true">
+                <p class="instructions">
+                    Enter a positive integer to convert to a Roman Numeral.
+                </p>
+                <form name="roman">
+                    <input type="number" min="1" max="9999" name="roman" placeholder="Enter a number">
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="result" aria-labelledby="roman">
+                    <p></p>
+                </div>
+            </div>
+
+            <button id="caesar" role="tab" aria-expanded="false" aria-controls="caesar-panel">
+                Caesar's Cipher
+                <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div id="caesar-panel" role="tabpanel" aria-labelledby="caesar" aria-hidden="true">
+                <p class="instructions">
+                    Enter a short phrase to encode using a ROT13 cipher.
+                </p>
+                <form name="caesar">
+                    <input type="text" name="caesar" maxlength="25" placeholder="Enter some text">
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="result" aria-labelledby="caesar">
+                    <p></p>
+                </div>
+            </div>
+
+            <button id="telephone" role="tab" aria-expanded="false" aria-controls="telephone-panel">
+                Telephone Number Validator
+                <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div id="telephone-panel" role="tabpanel" aria-labelledby="telephone" aria-hidden="true">
+                <p class="instructions">
+                    Enter a telephone number to check it's a valid format for a US-based telephone number.
+                </p>
+                <form name="telephone">
+                    <input type="text" name="telephone" maxlength="15" placeholder="Enter a phone number">
+                    <input type="submit" value="Submit">
+                </form>
+                <div class="result" aria-labelledby="telephone">
+                    <p></p>
+                </div>
+            </div>
+
+            <button id="cash" role="tab" aria-expanded="false" aria-controls="cash-panel">
+                Cash Register
+                <span class="material-symbols-outlined">expand_more</span>
+            </button>
+            <div id="cash-panel" role="tabpanel" aria-labelledby="cash" aria-hidden="true">
+                <p class="instructions">
+                    A simple user experience design for this algorithm was not feasible. Find my solution for
+                    this project <a href="https://gist.github.com/jemalmazar/b92248c7877945bc70ffb442b154dbdb" target="_blank">here</a>.
+                </p>
+                <hr>
+                <p class="signature">
+                    Code & Design by <a href="https://github.com/jemalmazar" target="_blank">Jeremiah</a>
+                </p>
+            </div>
+
+        </div> <!--- .tabcordion-list -->
+
+    </div> <!-- .tabcordion -->
+</body>
 
 </html>
