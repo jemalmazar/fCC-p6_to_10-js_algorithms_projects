@@ -1,4 +1,4 @@
-import { sanitize } from 'dompurify';
+import * as sanitize from 'dompurify';
 import { tabcordionButtons, expandArrows, tabcordionPanels, resultDivs } from './elements.js';
 import { palindrome, convertToRoman, rot13, telephoneCheck } from './lib.js';
 
@@ -42,7 +42,7 @@ export function handleSubmit(e) {
     const targetDiv = resultDivs.find((panel) => panel.getAttribute('aria-labelledby') === name);
 
     if (name === 'palindrome' && e.currentTarget.palindrome.value !== '') {
-        const cleanPalindrome = sanitize(e.currentTarget.palindrome.value, {
+        const cleanPalindrome = DOMPurify.sanitize(e.currentTarget.palindrome.value, {
             FORBID_ATTR: ['width', 'height', 'style'],
             FORBID_TAGS: ['style'],
         });
@@ -63,7 +63,7 @@ export function handleSubmit(e) {
             `;
         }
     } else if (name === 'roman' && e.currentTarget.roman.value !== '') {
-        const cleanRomanNumeral = sanitize(e.currentTarget.roman.value, {
+        const cleanRomanNumeral = DOMPurify.sanitize(e.currentTarget.roman.value, {
             FORBID_ATTR: ['width', 'height', 'style'],
             FORBID_TAGS: ['style'],
         });
@@ -72,7 +72,7 @@ export function handleSubmit(e) {
             <p>${convertToRoman(cleanRomanNumeral)}</p>
         `;
     } else if (name === 'caesar' && e.currentTarget.caesar.value !== '') {
-        const cleanCaesar = sanitize(e.currentTarget.caesar.value, {
+        const cleanCaesar = DOMPurify.sanitize(e.currentTarget.caesar.value, {
             FORBID_ATTR: ['width', 'height', 'style'],
             FORBID_TAGS: ['style'],
         });
@@ -81,7 +81,7 @@ export function handleSubmit(e) {
             <p>${rot13(cleanCaesar)}</p>
         `;
     } else if (name === 'telephone' && e.currentTarget.telephone.value !== '') {
-        const cleanPhoneNumber = sanitize(e.currentTarget.telephone.value, {
+        const cleanPhoneNumber = DOMPurify.sanitize(e.currentTarget.telephone.value, {
             FORBID_ATTR: ['width', 'height', 'style'],
             FORBID_TAGS: ['style'],
         });
