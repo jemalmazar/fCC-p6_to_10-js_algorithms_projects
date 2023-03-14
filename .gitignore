@@ -26,6 +26,7 @@ ehthumbs.db
 # =================== #
 node_modules/
 
-# Ignore Parcel cache #
+# Ignore Parcel files and folders #
 # =================== #
+dist
 .parcel-cache
