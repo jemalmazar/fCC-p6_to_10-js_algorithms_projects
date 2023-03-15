@@ -276,6 +276,11 @@ input[type='submit'] {
     cursor: pointer;
 }
 
+input[type="submit"]:hover {
+    background-color: var(--main_brand_colour);
+    color: var(--submit_btn_bg);
+}
+
 .result {
     font-family: 'Noto Sans', sans-serif;
     font-size: 1.25em;
