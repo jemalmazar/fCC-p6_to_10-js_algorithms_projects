@@ -9,9 +9,9 @@ A webpage where users can check for palindromes, convert integers to Roman numer
 ### Tools and Technologies Used
 
 - HTML
-- CSS
-- CSS Grid
-- CSS Flexbox
+- CSS (Grid + Flexbox)
+- JavaScript
+- [Google Fonts](https://fonts.google.com/)
 - [Parcel](https://parceljs.org/)
 - [Figma](https://www.figma.com/)
 
